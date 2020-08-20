@@ -19,4 +19,4 @@ First argument is config key, second value. `"1"`, `"Y"` and `"T"` results in `T
 | implicit_punct     |`T`                   |Automatically adds punctuation characters `,.!:\;` to the rules                |
 | ignore_case        |`T`                   |All rules are case-insensitive                                                 |
 | deaccent           |`T`                   |If provided word with accent letters, use two versions - with and without them |
-| implicit_hyphon           |`F`                   |Automatically adds hyphon characters `-` to the rules     |
+| implicit_hyphon           |`F`                   |Automatically adds hyphon characters `-` to the rules. Setting implicit_punct must be false.   |
