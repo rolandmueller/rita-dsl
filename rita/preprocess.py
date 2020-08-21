@@ -245,11 +245,11 @@ def preprocess_rules(root, config):
 
     pipeline = [dummy, expand_patterns, handle_deaccent, handle_rule_branching, handle_multi_word, handle_prefix]
 
-    if config.implicit_punct:
-        logger.info("Adding implicit Punctuations")
-        pipeline.append(add_implicit_punct)
-    elif config.implicit_hyphon:
+    if config.implicit_hyphon:
         logger.info("Adding implicit Hyphons")
         pipeline.append(add_implicit_hyphon)
+    elif config.implicit_punct:
+        logger.info("Adding implicit Punctuations")
+        pipeline.append(add_implicit_punct)
 
     return reduce(lambda acc, p: p(acc, config), pipeline, rules)
